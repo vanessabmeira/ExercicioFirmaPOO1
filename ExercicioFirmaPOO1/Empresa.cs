@@ -34,7 +34,7 @@ namespace Exercicio4
 {
     public class Empresa
     {
-        static List<Funcionario> listaFuncionarios = new();
+       private static List<Funcionario> listaFuncionarios = new();
 
         static void Main(string[] args)
         {
