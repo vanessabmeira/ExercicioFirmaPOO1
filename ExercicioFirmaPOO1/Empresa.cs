@@ -34,8 +34,11 @@ namespace Exercicio4
 {
     public class Empresa
     {
+        // Lista para armazenar funcionários
        private static List<Funcionario> listaFuncionarios = new();
 
+         //Menu de opções da empresa, para cadastro, Listar os empregados, promover e listar o salario anual do Empregado
+        
         static void Main(string[] args)
         {
             bool flagLoop = true;
@@ -94,6 +97,7 @@ namespace Exercicio4
 
 
         }
+        // Método para cadastrar um funcionário
 
         internal static void CadastrarFuncionario()
         {
@@ -133,6 +137,7 @@ namespace Exercicio4
                 Console.ReadLine();
             }
         }
+        // Método para listar todos os funcionários cadastrados
         private static void ListarFuncionarios()
         {
             if (!listaFuncionarios.Any())
@@ -152,6 +157,8 @@ namespace Exercicio4
             }
             
         }
+
+        // Método para promover um funcionário
         private static void PromoverFuncionario()
         {
             Console.WriteLine("Por favor, insira o nome e sobre nome do funcionario a ser promovido.");
@@ -173,7 +180,8 @@ namespace Exercicio4
             Console.WriteLine("\nAperte ENTER para retornar ao menu");
             Console.ReadLine();
         }
-
+        
+        // Método para demitir um funcionário
         private static void DemitirFuncionario()
         {
 
@@ -199,6 +207,8 @@ namespace Exercicio4
 
         }
 
+        
+        // Método para listar o salário anual de todos os funcionários
         private static void ListarSalarioAnual()
         {
             foreach (var funcionario in listaFuncionarios)
