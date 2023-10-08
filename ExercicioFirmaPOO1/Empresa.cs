@@ -34,11 +34,16 @@ namespace Exercicio4
 {
     public class Empresa
     {
-        // Lista para armazenar funcionários
-       private static List<Funcionario> listaFuncionarios = new();
 
-         //Menu de opções da empresa, para cadastro, Listar os empregados, promover e listar o salario anual do Empregado
-        
+
+        /// <summary>
+        /// Lista para armazenar funcionários
+        /// </summary>
+        private static List<Funcionario> listaFuncionarios = new();
+
+
+        //Menu de opções da empresa, para cadastro, Listar os empregados, promover e listar o salario anual do Empregado
+
         static void Main(string[] args)
         {
             bool flagLoop = true;
@@ -97,9 +102,12 @@ namespace Exercicio4
 
 
         }
-        // Método para cadastrar um funcionário
 
+        /// <summary>
+        /// Lista para armazenar funcionários
+        /// </summary>
         internal static void CadastrarFuncionario()
+
         {
             try
             {
@@ -137,10 +145,12 @@ namespace Exercicio4
                 Console.ReadLine();
             }
         }
-        // Método para listar todos os funcionários cadastrados
+        /// <summary>
+        /// Método para listar todos os funcionários cadastrados
+        /// </summary>
         private static void ListarFuncionarios()
         {
-            if (!listaFuncionarios.Any())
+            if (!listaFuncionarios.Any())//Trata caso não existir nem um funcionario cadastrado.
             {
                 Console.WriteLine("Não há nenhum funcionário cadastrado");
                 Console.WriteLine("\nAperte ENTER para retornar ao menu");
@@ -157,14 +167,16 @@ namespace Exercicio4
             }
             
         }
+        /// <summary>
+        /// Método usado para promover um funcionário.
+        /// </summary>
 
-        // Método para promover um funcionário
         private static void PromoverFuncionario()
         {
             Console.WriteLine("Por favor, insira o nome e sobre nome do funcionario a ser promovido.");
 
             string nomeCompleto = Console.ReadLine();
-            string[] nomeDividido = nomeCompleto.Split(" ");
+            string[] nomeDividido = nomeCompleto.Split(" "); // Procura o "caractere" espaço para quebrar o nome que foi digitado completo pelo usuario.
 
             Funcionario funcionarioPromovido = listaFuncionarios.Find(funcionario => funcionario.nome.Equals(nomeDividido[0]) && funcionario.sobrenome.Equals(nomeDividido[1]));
             if (funcionarioPromovido != null)
@@ -180,8 +192,10 @@ namespace Exercicio4
             Console.WriteLine("\nAperte ENTER para retornar ao menu");
             Console.ReadLine();
         }
-        
-        // Método para demitir um funcionário
+        /// <summary>
+        /// Método para demitir um funcionário
+        /// </summary>
+
         private static void DemitirFuncionario()
         {
 
@@ -207,8 +221,10 @@ namespace Exercicio4
 
         }
 
-        
-        // Método para listar o salário anual de todos os funcionários
+        /// <summary>
+        /// Método para listar o salário anual de todos os funcionários
+        /// </summary>
+
         private static void ListarSalarioAnual()
         {
             foreach (var funcionario in listaFuncionarios)
