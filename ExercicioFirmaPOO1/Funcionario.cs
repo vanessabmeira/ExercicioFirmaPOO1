@@ -16,20 +16,20 @@ namespace Exercicio4
         public string sobrenome { get; private set; }
         private int matricula { get; set; }
         private int idade { get; set; }
-        private DateTime dataNascimento { get; set; }
-        private DateTime dataContratação { get; set; }
+        public DateTime dataNascimento { get; set; }
+        private DateTime dataContratacao { get; set; }
         private double salario { get; set; }
 
 
 
-        public Funcionario(string nome, string sobrenome, int idade, DateTime dataNascimento, int matricula, double salario = 0, DateTime dataContratação = new DateTime())
+        public Funcionario(string nome, string sobrenome, int idade, DateTime dataNascimento, int matricula, double salario = 0, DateTime dataContratacao = new DateTime())
         {
             this.nome = nome;
             this.sobrenome = sobrenome;
             this.matricula = matricula;
             this.idade = idade;
             this.dataNascimento = dataNascimento;
-            this.dataContratação = dataContratação;
+            this.dataContratacao = dataContratacao;
             this.salario = salario;
 
 
@@ -59,7 +59,7 @@ namespace Exercicio4
                 Console.WriteLine("Sobrenome: " + this.sobrenome);
                 Console.WriteLine("Idade: " + this.idade + " anos");
                 Console.WriteLine("Data de Nascimento: " + this.dataNascimento.Date);
-                Console.WriteLine("Data de Contratação: " + this.dataContratação.Date);
+                Console.WriteLine("Data de Contratação: " + this.dataContratacao.Date);
                 Console.WriteLine("Salario: R$ " + this.salario);
                 Console.WriteLine("Matricula: n°" + this.matricula);
                 Console.WriteLine("");
