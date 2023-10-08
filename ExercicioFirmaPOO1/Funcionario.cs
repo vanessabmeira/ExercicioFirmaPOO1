@@ -12,6 +12,7 @@ namespace Exercicio4
 {
     public class Funcionario
     {
+        // Propriedades para armazenar informações do funcionário
         public string nome { get; private set; }
         public string sobrenome { get; private set; }
         private int matricula { get; set; }
@@ -21,7 +22,7 @@ namespace Exercicio4
         private double salario { get; set; }
 
 
-
+        // Construtor para inicializar um objeto Funcionario
         public Funcionario(string nome, string sobrenome, int idade, DateTime dataNascimento, int matricula, double salario = 0, DateTime dataContratacao = new DateTime())
         {
             this.nome = nome;
@@ -33,7 +34,7 @@ namespace Exercicio4
             this.salario = salario;
 
 
-
+             // Verifica se o salário é menor que 1320 e, se for, define o salário como 1320
             if (salario < 1320)
             {
                 salario = 1320;
@@ -42,16 +43,19 @@ namespace Exercicio4
         }
 
 
+         // Método para promover um funcionário aumentando seu salário
         internal void Promover()
         {
             this.salario = this.salario * 1.1;
         }
-
+        
+        // Método para calcular o salário anual do funcionário
         internal double calcularSalarioAnual()
         {
             return this.salario * 12;
-        }
+        }      
 
+        // Método para listar informações do funcionário
         internal void listarInformacoes()
         {
             {
